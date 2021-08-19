@@ -8,14 +8,66 @@ class Tiendas extends StatelessWidget {
     return Container(
       child: Table(
         children: [
-          TableRow(children: [
-            _SingleCard(
-              color: Colors.white,
-              icon: Icons.store,
-              name: 'Nombre de la tienda',
-              description: 'Descripción de la tienda bla bla bla',
-            ),
-          ]),
+          TableRow(
+            children: [
+              _SingleCard(
+                color: Colors.white,
+                icon: Icons.store,
+                name: 'Tienda ABC',
+                description: 'Descripción de la tienda',
+              ),
+            ],
+          ),
+          TableRow(
+            children: [
+              _SingleCard(
+                color: Colors.white,
+                icon: Icons.store,
+                name: 'XYZ Store',
+                description: 'Descripción de la tienda',
+              ),
+            ],
+          ),
+          TableRow(
+            children: [
+              _SingleCard(
+                color: Colors.white,
+                icon: Icons.store,
+                name: 'Bajones',
+                description: 'Descripción de la tienda ',
+              ),
+            ],
+          ),
+          TableRow(
+            children: [
+              _SingleCard(
+                color: Colors.white,
+                icon: Icons.store,
+                name: 'uwu clothes',
+                description: 'Descripción de la tienda ',
+              ),
+            ],
+          ),
+          TableRow(
+            children: [
+              _SingleCard(
+                color: Colors.white,
+                icon: Icons.store,
+                name: 'Papeleria BBB',
+                description: 'Descripción de la tienda ',
+              ),
+            ],
+          ),
+          TableRow(
+            children: [
+              _SingleCard(
+                color: Colors.white,
+                icon: Icons.store,
+                name: 'TeTienda',
+                description: 'Descripción de la tienda ',
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -38,9 +90,9 @@ class _SingleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: EdgeInsets.symmetric(vertical: 8),
       child: Container(
-        height: 140,
+        height: 120,
         width: 180,
         alignment: Alignment.centerLeft,
         decoration: BoxDecoration(
@@ -83,11 +135,6 @@ class _SingleCard extends StatelessWidget {
           Text(
             name,
             style: TextStyle(color: Colors.white, fontSize: 20),
-            child: Icon(
-              icon,
-              size: 45,
-              color: Colors.deepPurple,
-            ),
           ),
         ]),
         SizedBox(height: 8),

@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:opstores/widgets/background.dart';
 import 'package:opstores/widgets/bottom_navigator.dart';
+import 'package:opstores/widgets/search.dart';
 import 'package:opstores/widgets/tiendas.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
+        fit: StackFit.expand,
         children: [
           Background(),
           _HomeBody(),
+          // Search(),
+          //
         ],
       ),
       bottomNavigationBar: CustomeBottomNavigator(),
@@ -20,6 +23,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
+/*
 class _HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,12 +31,38 @@ class _HomeBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            //Buscador(),
             //Colecciones(),
+            SizedBox(height: 60),
             Tiendas(),
           ],
         ),
       ),
     );
+  }
+}
+*/
+
+class _HomeBody extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+        child: CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          floating: true,
+          expandedHeight: 60,
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+          flexibleSpace: Search(),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+              (context, index) => ListTile(
+                    title: Tiendas(),
+                  ),
+              childCount: 1),
+        )
+      ],
+    ));
   }
 }
