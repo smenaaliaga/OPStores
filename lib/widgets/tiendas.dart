@@ -90,22 +90,17 @@ class _SingleCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8),
-      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 5),
         height: 120,
-        width: 180,
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Color.fromRGBO(62, 66, 107, 0.95),
-            borderRadius: BorderRadius.circular(20)),
-        child: Row(
-          children: [
-            _StoreImage(),
-            _StoreDescription(),
-          ],
-        ),
-      ),
-    );
+        child: Card(
+          child: Row(
+            children: [
+              _StoreImage(),
+              SizedBox(width: 10),
+              _StoreDescription(),
+            ],
+          ),
+        ));
   }
 
   _StoreImage() {
@@ -113,15 +108,15 @@ class _SingleCard extends StatelessWidget {
       children: [
         SizedBox(width: 10),
         CircleAvatar(
-          backgroundColor: Colors.grey,
+          backgroundColor: Colors.black12,
           child: Icon(
             icon,
             size: 45,
-            color: Colors.deepPurple,
+            color: Color.fromRGBO(47, 48, 52, 1),
           ),
           radius: 50,
         ),
-        SizedBox(width: 30),
+        SizedBox(width: 10),
       ],
     );
   }

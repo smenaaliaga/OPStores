@@ -11,8 +11,8 @@ class Background extends StatelessWidget {
       end: Alignment.bottomCenter,
       stops: [0.2, 0.8],
       colors: [
-        Color(0xFF2E305F),
-        Color(0xFF202333),
+        Theme.of(context).primaryColor,
+        Theme.of(context).primaryColorDark,
       ],
     ));
 
@@ -20,7 +20,7 @@ class Background extends StatelessWidget {
       // Gradiente de fondo
       Container(decoration: boxDecoration),
       // Pink Box
-      _PinkBox()
+      //_PinkBox()
     ]);
   }
 }
@@ -39,8 +39,8 @@ class _PinkBox extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(40),
               gradient: LinearGradient(colors: [
-                Color.fromRGBO(236, 98, 188, 1),
-                Color.fromRGBO(251, 142, 172, 1),
+                Color.fromRGBO(194, 195, 189, 1),
+                Color.fromRGBO(170, 171, 166, 1),
               ])),
         ),
       ),

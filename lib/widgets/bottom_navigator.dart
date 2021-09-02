@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 
-class CustomeBottomNavigator extends StatelessWidget {
+class BottomNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
-      iconSize: 30,
-      selectedItemColor: Colors.pink,
-      backgroundColor: Color.fromRGBO(55, 57, 84, 1),
-      unselectedItemColor: Color.fromRGBO(116, 117, 152, 1),
       currentIndex: 0,
+      iconSize: 32,
+      type: BottomNavigationBarType.fixed,
       items: [
+        BottomNavigationBarItem(icon: Icon(Icons.store), label: 'Tiendas'),
         BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today), label: 'Calendario'),
+            icon: Icon(Icons.shopping_bag), label: 'Productos'),
         BottomNavigationBarItem(
-            icon: Icon(Icons.pie_chart_outline_outlined), label: 'Grafica'),
+            icon: Icon(Icons.add_shopping_cart), label: 'Favoritos'),
         BottomNavigationBarItem(
-            icon: Icon(Icons.supervised_user_circle), label: 'Usuarios')
+            icon: Icon(Icons.account_circle), label: 'Usuarios')
       ],
     );
   }
