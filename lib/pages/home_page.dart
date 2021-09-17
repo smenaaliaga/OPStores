@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:opstores/widgets/background.dart';
 import 'package:opstores/widgets/bottom_navigator.dart';
 import 'package:opstores/widgets/search.dart';
-import 'package:opstores/widgets/tiendas.dart';
+import 'package:opstores/widgets/store_card.dart';
 
 class HomePage extends StatelessWidget {
   @override

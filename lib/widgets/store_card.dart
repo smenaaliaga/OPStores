@@ -89,7 +89,7 @@ class _SingleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final storeCard = Container(
         margin: EdgeInsets.symmetric(vertical: 5),
         height: 120,
         child: Card(
@@ -101,6 +101,13 @@ class _SingleCard extends StatelessWidget {
             ],
           ),
         ));
+
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, 'store');
+      },
+      child: storeCard,
+    );
   }
 
   _StoreImage() {
