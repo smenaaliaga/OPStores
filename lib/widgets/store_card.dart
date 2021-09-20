@@ -110,7 +110,8 @@ class _SingleCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'store', arguments: {'tag': tag});
+        Navigator.pushNamed(context, 'store',
+            arguments: {'tag': tag, 'name': name});
       },
       child: storeCard,
     );

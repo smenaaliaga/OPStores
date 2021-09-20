@@ -77,7 +77,7 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
           child: Opacity(
             opacity: shrinkOffset / expandedHeight,
             child: Text(
-              'XYZ Store',
+              args['name'],
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w700,
@@ -93,6 +93,7 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
             opacity: (1 - shrinkOffset / expandedHeight),
             child: Card(
               elevation: 10,
+              color: Colors.transparent,
               child: SizedBox(
                 height: expandedHeight,
                 width: MediaQuery.of(context).size.width / 2,
