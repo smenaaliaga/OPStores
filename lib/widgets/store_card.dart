@@ -12,7 +12,7 @@ class Tiendas extends StatelessWidget {
             children: [
               _SingleCard(
                 color: Colors.white,
-                icon: Icons.store,
+                tag: 'a',
                 name: 'Tienda ABC',
                 description: 'Descripción de la tienda',
               ),
@@ -22,7 +22,7 @@ class Tiendas extends StatelessWidget {
             children: [
               _SingleCard(
                 color: Colors.white,
-                icon: Icons.store,
+                tag: 'b',
                 name: 'XYZ Store',
                 description: 'Descripción de la tienda',
               ),
@@ -32,7 +32,7 @@ class Tiendas extends StatelessWidget {
             children: [
               _SingleCard(
                 color: Colors.white,
-                icon: Icons.store,
+                tag: 'c',
                 name: 'Bajones',
                 description: 'Descripción de la tienda ',
               ),
@@ -42,7 +42,7 @@ class Tiendas extends StatelessWidget {
             children: [
               _SingleCard(
                 color: Colors.white,
-                icon: Icons.store,
+                tag: 'd',
                 name: 'uwu clothes',
                 description: 'Descripción de la tienda ',
               ),
@@ -52,7 +52,7 @@ class Tiendas extends StatelessWidget {
             children: [
               _SingleCard(
                 color: Colors.white,
-                icon: Icons.store,
+                tag: 'e',
                 name: 'Papeleria BBB',
                 description: 'Descripción de la tienda ',
               ),
@@ -62,7 +62,7 @@ class Tiendas extends StatelessWidget {
             children: [
               _SingleCard(
                 color: Colors.white,
-                icon: Icons.store,
+                tag: 'f',
                 name: 'TeTienda',
                 description: 'Descripción de la tienda ',
               ),
@@ -74,14 +74,20 @@ class Tiendas extends StatelessWidget {
   }
 }
 
+class ScreenArguments {
+  final String tag;
+
+  ScreenArguments(this.tag);
+}
+
 class _SingleCard extends StatelessWidget {
-  final IconData icon;
+  final String tag;
   final Color color;
   final String name;
   final String description;
 
   const _SingleCard({
-    required this.icon,
+    required this.tag,
     required this.color,
     required this.name,
     required this.description,
@@ -104,7 +110,7 @@ class _SingleCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'store');
+        Navigator.pushNamed(context, 'store', arguments: {'tag': tag});
       },
       child: storeCard,
     );
@@ -114,14 +120,16 @@ class _SingleCard extends StatelessWidget {
     return Row(
       children: [
         SizedBox(width: 10),
-        CircleAvatar(
-          backgroundColor: Colors.black12,
-          child: Icon(
-            icon,
-            size: 45,
-            color: Color.fromRGBO(47, 48, 52, 1),
+        Hero(
+          tag: tag,
+          child: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            child: ClipRRect(
+              child: Image.asset('assets/img/store.png', fit: BoxFit.cover),
+              borderRadius: BorderRadius.circular(50.0),
+            ),
+            radius: 50,
           ),
-          radius: 50,
         ),
         SizedBox(width: 10),
       ],
