@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:opstores/pages/store.dart';
-import 'package:opstores/test/main_test.dart';
 import 'pages/home_page.dart';
 
 void main() => runApp(OPStores());
@@ -14,7 +13,6 @@ class OPStores extends StatelessWidget {
       routes: {
         '/': (BuildContext context) => HomePage(),
         'store': (BuildContext context) => Store(),
-        'TestPage': (BuildContext context) => TestPage(),
       },
       debugShowCheckedModeBanner: false,
       // Define Theme
