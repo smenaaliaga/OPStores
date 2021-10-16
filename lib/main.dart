@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:opstores/pages/store.dart';
-import 'package:opstores/test/main_test.dart';
 import 'pages/home_page.dart';
+
+// Import test
+import 'package:opstores/test/main_test.dart';
+import 'package:opstores/test/pages/headers_page.dart';
 
 void main() => runApp(OPStores());
 
@@ -10,11 +13,12 @@ class OPStores extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'OPStores',
-      initialRoute: '/',
+      initialRoute: 'HeaderPage',
       routes: {
         '/': (BuildContext context) => HomePage(),
         'store': (BuildContext context) => Store(),
         'TestPage': (BuildContext context) => TestPage(),
+        'HeaderPage': (BuildContext context) => HeadersPage(),
       },
       debugShowCheckedModeBanner: false,
       // Define Theme
