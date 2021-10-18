@@ -5,6 +5,7 @@ import 'pages/home_page.dart';
 // Import test
 import 'package:opstores/test/main_test.dart';
 import 'package:opstores/test/pages/headers_page.dart';
+import 'package:opstores/test/pages/pinterest_page.dart';
 
 void main() => runApp(OPStores());
 
@@ -13,12 +14,13 @@ class OPStores extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'OPStores',
-      initialRoute: 'HeaderPage',
+      initialRoute: 'PinterestPage',
       routes: {
         '/': (BuildContext context) => HomePage(),
         'store': (BuildContext context) => Store(),
         'TestPage': (BuildContext context) => TestPage(),
         'HeaderPage': (BuildContext context) => HeadersPage(),
+        'PinterestPage': (BuildContext context) => PinterestPage(),
       },
       debugShowCheckedModeBanner: false,
       // Define Theme
